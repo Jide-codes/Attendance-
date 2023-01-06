@@ -9,7 +9,7 @@ urlpatterns = [
     path('delete-student-info/<str:pk>/', views.delete_student_info, name='delete-info' ),
     path('do-attendance/', views.do_attendance, name='do-attendance'),
     path('attendance-table/', views.attendance_table, name='attendance-table'),
-    path('overall_report/', views.overall_report, name='overall-report'),
+    # path('overall_report/', views.overall_report, name='overall-report'),
 
     path('successful/', views.successful, name='successful')
 ]

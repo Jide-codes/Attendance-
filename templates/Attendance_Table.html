@@ -43,25 +43,26 @@
 <a href="{% url 'do-attendance' %}">
     <button  type="button" id="back">back</button>
   </a>
-<div class="table-responsive">
+<div style="margin-top:-1rem;" class="table-responsive">
     <table class="table table-bordered border-dark">
       <thead>
         <tr class="tread">
-          
+          <th scope="col">ID</th>
           <th scope="col">MatricNo</th>
-          <th scope="col">Name</th>
-          <th scope="col">Present</th>
+          <th scope="col">Attendance</th>
           <th scope="col">Gender</th>
+          <th scope="col">Date</th>
          
         </tr>
       </thead>
       <tbody>
         {% for data in attendance %}
-        <tr>
+        <tr> 
+          <td>{{data.id}}</td>
           <td><a style ="text-decoration:none; color:black; "href="{% url 'student-data'%}">{{data.matricNumber.matric_no}}</a></td>
-          <td>{{data.matricNumber.name}}</td>
           <td>{{data.what_to_return}}</td>
           <td>{{data.matricNumber.gender}}</td>
+          <td>{{data.date_added}}</td>
           
         </tr>
         {% endfor %}

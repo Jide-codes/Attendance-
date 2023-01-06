@@ -28,15 +28,20 @@
         <li><a href="{% url 'student-data' %}">Student</a>
           <div class="line"></div>
         </li>
-        <li><a href="">monthly report</a>
+        <li><a href="">DashBoard</a>
           <div class="line"></div>
         </li>
-        <li><a href="{% url 'overall-report' %}">overall report</a>
+
+        <li><a href="{% url 'do-attendance' %}">Do Attendance</a>
           <div class="line"></div>
         </li>
-        <li><a href="{% url 'do-attendance' %}">do attedance</a>
+
+        <li><a href="">overall report</a>
           <div class="line"></div>
         </li>
+        {% comment %} <li><a href="{% url 'do-attendance' %}">do attedance</a>
+          <div class="line"></div>
+        </li> {% endcomment %}
       </ul>
       <a href=""><button class="log-in-btn">log out</button>
       </a>

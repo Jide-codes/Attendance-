@@ -24,24 +24,7 @@
     </label>
   
     <section class="nav-sec">
-      <ul>
-        <li><a href="{% url 'home' %}">Home</a>
-          <div class="line"></div>
-        </li>
-        <li class="active"><a href="">Student</a>
-          <div class="line"></div>
-        </li>
-        <li><a href="">monthly report</a>
-          <div class="line"></div>
-        </li>
-        <li><a href="">overall report</a>
-          <div class="line"></div>
-        </li>
-        <li><a href="{% url 'do-attendance' %}">do attedance</a>
-          <div class="line"></div>
-        </li>
-      </ul>
-      <a href="log-in.html"><button class="log-in-btn">log out</button>
+      <a href="{% url 'home' %}"><button class="log-in-btn">Home</button>
       </a>
     </section>
   </nav>
@@ -61,6 +44,9 @@
         <i class="gg-add-r"></i>
       </button>
     </a>
+    <div style="height:10px;">
+      
+    </div>
 
     <!-- TABLE CREATED WITH CSS GRID -->
     <!-- SHOULD I HAVE USED THE SEMANTIC TABLE? -->
@@ -70,6 +56,9 @@
 <style>
   .table{
     margin-top:1rem;
+    width:100%;
+    
+   
 
   }
  .tread{
@@ -83,11 +72,35 @@
     font-weight:700;
     
   }
+
+  .fixTableHead {
+    overflow-y: auto;
+    height: 350px;
+  }
+
+  .fixTableHead thead th {
+    position: sticky;
+    top: 0;
+    color:#fff;
+    background:#00afd1;
+
+  table {
+    border-collapse: collapse;        
+    width: 100%;
+    
+  }
+  td {
+    padding: 8px 15px;
+    
+  }
+  th {
+    background:#00afd1;
+  }
   
 </style>
 
-<div class="table-responsive">
-    <table class="table table-bordered border-dark">
+<div class="fixTableHead">
+    <table class="table table-hover">
       <thead>
         <tr class="tread">
           
@@ -98,7 +111,6 @@
           <th scope="col">Session</th>
           <th scope="col">Level</th>
           <th scope="col">Department</th>
-          <th scope="col">Semester</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -112,7 +124,7 @@
           <td>{{data.session}}</td>
           <td>{{data.level}}</td>
           <td>{{data.department}}</td>
-          <td>{{data.semester}}</td>
+        
           <td>
            
             <a href="{% url 'delete-info' data.id %}"><i class='bx bx-trash' style='color:#f50404; width:10px; margin-left:1.5rem; font-size:19px; font-weight:550;'></i></a>

@@ -1,15 +1,15 @@
 from django.forms import ModelForm
 from django import forms
-from .models import StudentDataInfo, AttendanceTable
+from .models import Student, Attendance
 
 class UpdateStudentForm(ModelForm):
     class Meta:
-        model = StudentDataInfo
+        model = Student
         fields = '__all__'
 
 class Attendance(ModelForm):
 
     class Meta:
-        model = AttendanceTable
+        model = Attendance
         fields = '__all__'
 
