@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Attendance Dashboard | By Code Info</title>
+  <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+
+  <style>
+    .tableFixHead {
+      overflow-y: auto; 
+      height: 400px; 
+      
+    }
+
+    .tableFixHead thead th {
+      position: sticky; 
+      top:-0.5px; 
+      background:#fff;
+    }
+  </style>
+
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+          <h3>LOGO</h3>
+          <span class="nav-item">{{request.user}}</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-menorah"></i>
+          <span class="nav-item">Dashboard</span>
+        </a></li>
+       
+        
+        
+        <li><a href="#">
+          <i class="fas fa-cog"></i>
+          <span class="nav-item">Setting</span>
+        </a></li>
+
+        <li><a href="#" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Log out</span>
+        </a></li>
+      </ul>
+    </nav>
+
+
+    <section class="main">
+      <div class="main-top">
+        <h1>Attendance</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="users">
+        <div class="card">
+         
+          <h1>Total Student</h1>
+          <p>Ui designer</p>
+        
+        </div>
+        <div class="card">
+          
+          <h1>Balbina kherr</h1>
+          <p>Progammer</p>
+          
+        </div>
+        <div class="card">
+          
+          <h1>Badan John</h1>
+          <p>tester</p>
+          
+        </div>
+        <div class="card">
+          
+          <h1>Salina micheal</h1>
+          <p>Ui designer</p>
+          
+        </div>
+      </div>
+
+      <section class="attendance">
+        <div class="attendance-list">
+          <h1>Overall Report</h1>
+          
+          <div class="tableFixHead">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Matric_no</th>
+                <th>Name</th>
+                <th>Depart</th>
+                <th>Semester</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>01</td>
+                <td>Sam David</td>
+                <td>Design</td>
+                <td>03-24-22</td>
+                <td>8:00AM</td>
+                
+              </tr>
+              <tr>
+                <td>02</td>
+                <td>Balbina Kherr</td>
+                <td>Coding</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+                
+              </tr>
+              <tr>
+                <td>03</td>
+                <td>Badan John</td>
+                <td>testing</td>
+                <td>03-24-22</td>
+                <td>8:00AM</td>
+                
+              </tr>
+              <tr>
+                <td>04</td>
+                <td>Sara David</td>
+                <td>Design</td>
+                <td>03-24-22</td>
+                <td>8:00AM</td>
+                
+              </tr>
+              <tr >
+                <td>05</td>
+                <td>Salina</td>
+                <td>Coding</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+                
+              </tr>
+              <tr >
+                <td>06</td>
+                <td>Tara Smith</td>
+                <td>Testing</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+              </tr> 
+
+              <tr >
+                <td>06</td>
+                <td>Tara Smith</td>
+                <td>Testing</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+              </tr> 
+
+              <tr >
+                <td>06</td>
+                <td>Tara Smith</td>
+                <td>Testing</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+              </tr> 
+
+              <tr >
+                <td>06</td>
+                <td>Tara Smith</td>
+                <td>Testing</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+              </tr> 
+
+              <tr >
+                <td>06</td>
+                <td>Tara Smith</td>
+                <td>Testing</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+              </tr> 
+
+              <tr >
+                <td>06</td>
+                <td>Tara Smith</td>
+                <td>Testing</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+              </tr> 
+
+              <tr >
+                <td>06</td>
+                <td>Tara Smith</td>
+                <td>Testing</td>
+                <td>03-24-22</td>
+                <td>9:00AM</td>
+              </tr> 
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+</body>
+</html>

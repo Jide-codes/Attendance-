@@ -69,20 +69,21 @@
   tr{
     background:#fff;
     color:#000;
-    font-weight:700;
+    font-weight:500;
     
   }
 
   .fixTableHead {
     overflow-y: auto;
     height: 350px;
+    margin-top:1rem;
   }
 
   .fixTableHead thead th {
     position: sticky;
     top: 0;
-    color:#fff;
-    background:#00afd1;
+    color:#000;
+    background:#fff;
 
   table {
     border-collapse: collapse;        
@@ -96,8 +97,19 @@
   th {
     background:#00afd1;
   }
+ 
   
 </style>
+
+<div class="container ">
+
+  <form action="{% url 'student-data' %}">
+      <div class="form" >
+        <input type="text" class="form-control form-input" name="search" placeholder="Search.......">
+      </div>
+    </form>
+      
+    </div>
 
 <div class="fixTableHead">
     <table class="table table-hover">

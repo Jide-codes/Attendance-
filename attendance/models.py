@@ -19,27 +19,27 @@ class Student(models.Model):
 
 
 
-class Attendance(models.Model):
+class StudentAttendances(models.Model):
+    SEMESTER = (
+        ('1st', '1st'),
+        ('2nd', '2nd')
+        
+    )
+
     student = models.ForeignKey(Student, on_delete=models.CASCADE, blank=True, null=False)
-    semester    = models.CharField(max_length=100, blank=True, null=True)
-    attendance = models.BooleanField(default=False)
+    semester    = models.CharField(max_length=100, blank=True, null=True, choices=SEMESTER)
+    present = models.BooleanField(default=False)
+    absent = models.BooleanField(default=False)
     date_added = models.DateTimeField(auto_now=True)
     
 
-    def what_to_return(self):
-        if self.attendance:
-            return 'Yes'
-        else:
-            return 'No'
 
-    def __str__(self):
-        if self.attendance:
-            return 'present'
-        else:
-            return 'absent'
+
+
+    
     
 class Overall(models.Model):
-    data = models.ForeignKey(Attendance, on_delete=models.CASCADE)
+    data = models.ForeignKey(StudentAttendances, on_delete=models.CASCADE)
     percentage = models.IntegerField(blank=True,null=True)
     
     def __str__(self):
