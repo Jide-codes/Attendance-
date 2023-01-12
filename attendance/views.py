@@ -93,10 +93,13 @@ def dashboard(request):
     # for student in students:
     #     print = student.student.name,student.num_appearance 
     #     return print
-        
+    
+    student = Student.objects.all() 
+    student_total = len(student)
     
     
     
-    context = {'print':students}
+    
+    context = {'print':students, 'student_total':student_total}
     return render(request, 'dashboard.html', context)
 

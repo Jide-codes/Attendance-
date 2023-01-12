@@ -25,7 +25,7 @@
   </style>
 
   <div class="container">
-    <nav>
+    {% comment %} <nav>
       <ul>
         <li><a href="{% url 'home' %}" class="logo">
           <h3>LOGO</h3>
@@ -48,7 +48,7 @@
           <span class="nav-item">Log out</span>
         </a></li>
       </ul>
-    </nav>
+    </nav> {% endcomment %}
 
 
     <section class="main">
@@ -61,21 +61,11 @@
          
           <h1>Total Student</h1>
           <p>Ui designer</p>
-          <h2>{{students_total}}</h2>
+          <h2>{{student_total}}</h2>
         
         </div>
-        <div class="card">
-          
-          <h1>Balbina kherr</h1>
-          <p>Progammer</p>
-          
-        </div>
-        <div class="card">
-          
-          <h1>Badan John</h1>
-          <p>tester</p>
-          
-        </div>
+        
+       
         <div class="card">
           
           <h1>Salina micheal</h1>
