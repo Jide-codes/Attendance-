@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Attendance Dashboard | By Code Info</title>
+  <title>Attendance</title>
   <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}" />
   <!-- Font Awesome Cdn Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
@@ -27,7 +27,7 @@
   <div class="container">
     <nav>
       <ul>
-        <li><a href="#" class="logo">
+        <li><a href="{% url 'home' %}" class="logo">
           <h3>LOGO</h3>
           <span class="nav-item">{{request.user}}</span>
         </a></li>
@@ -53,7 +53,7 @@
 
     <section class="main">
       <div class="main-top">
-        <h1>Attendance</h1>
+       
         <i class="fas fa-user-cog"></i>
       </div>
       <div class="users">
@@ -61,6 +61,7 @@
          
           <h1>Total Student</h1>
           <p>Ui designer</p>
+          <h2>{{students_total}}</h2>
         
         </div>
         <div class="card">
@@ -99,101 +100,16 @@
               </tr>
             </thead>
             <tbody>
+              {% for student in print %}
               <tr>
-                <td>01</td>
-                <td>Sam David</td>
-                <td>Design</td>
-                <td>03-24-22</td>
-                <td>8:00AM</td>
-                
+                <td>{{student.student.matric_no}}</td>
+                <td>{{student.student.name}}</td>
+                <td>{{student.student.department}}</td>
+                <td>{{student.semester}}</td>
+                <td>{{student.num_appearance}}</td>
               </tr>
-              <tr>
-                <td>02</td>
-                <td>Balbina Kherr</td>
-                <td>Coding</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-                
-              </tr>
-              <tr>
-                <td>03</td>
-                <td>Badan John</td>
-                <td>testing</td>
-                <td>03-24-22</td>
-                <td>8:00AM</td>
-                
-              </tr>
-              <tr>
-                <td>04</td>
-                <td>Sara David</td>
-                <td>Design</td>
-                <td>03-24-22</td>
-                <td>8:00AM</td>
-                
-              </tr>
-              <tr >
-                <td>05</td>
-                <td>Salina</td>
-                <td>Coding</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-                
-              </tr>
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-              </tr> 
-
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-              </tr> 
-
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-              </tr> 
-
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-              </tr> 
-
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-              </tr> 
-
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-              </tr> 
-
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-              </tr> 
+              {% endfor %}
+              
             </tbody>
           </table>
         </div>

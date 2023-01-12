@@ -29,14 +29,17 @@ class StudentAttendances(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, blank=True, null=False)
     semester    = models.CharField(max_length=100, blank=True, null=True, choices=SEMESTER)
     present = models.BooleanField(default=False)
-    absent = models.BooleanField(default=False)
+    # absent = models.BooleanField(default=False)
     date_added = models.DateTimeField(auto_now=True)
     
 
-
-
-
+    def __str__(self):
+        if self.present:
+            return f"{self.student.matric_no}, is present"
+        else:
+            return f"{self.student.matric_no}, is absent"
     
+       
     
 class Overall(models.Model):
     data = models.ForeignKey(StudentAttendances, on_delete=models.CASCADE)

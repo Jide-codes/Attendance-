@@ -13,10 +13,10 @@ class Attendance(ModelForm):
 
     class Meta:
         model = StudentAttendances
-        fields = ['student', 'semester', 'present', 'absent']
+        fields = ['student', 'semester', 'present', ]
         widgets={
             'student'
             'semester': forms.TextInput(attrs={'class': 'form-control'}),
             'present': forms.CheckboxInput(),
-            'absent': forms.CheckboxInput(),
+            # 'absent': forms.CheckboxInput(),
         }

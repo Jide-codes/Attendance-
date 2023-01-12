@@ -3,6 +3,8 @@ from django.db.models import Q
 from .models import Student, StudentAttendances
 from .forms import UpdateStudentForm,Attendance
 from .filter import AttendanceFilter
+from django.db.models import Count
+
 # Create your views here.
 def home(request):
     return render(request, "home.html")
@@ -83,7 +85,18 @@ def do_attendance(request):
 
 
 def dashboard(request):
+    students = StudentAttendances.objects.filter(present=True).annotate(num_appearance=Count('present'))
     
-    context = {}
+    
+    
+    
+    # for student in students:
+    #     print = student.student.name,student.num_appearance 
+    #     return print
+        
+    
+    
+    
+    context = {'print':students}
     return render(request, 'dashboard.html', context)
 
